@@ -1,0 +1,255 @@
+/** THEME COLOR **/
+/** RESET **/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/** GENERAL STYLING **/
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+body {
+  font-size: 62.5%;
+}
+h1 {
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 3rem;
+}
+h2 {
+  font-family: 'Old Standard TT', serif;
+  font-size: 2rem;
+}
+h3 {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1rem;
+}
+.logo {
+  width: 120px;
+  height: 34px;
+}
+header {
+  background-color: #EBEBEB;
+  padding: 2rem 0;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header ul {
+  display: flex;
+}
+header ul li {
+  font-size: 0.5rem;
+  font-family: 'Oxygen', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+header ul li a {
+  text-decoration: none;
+  color: #333;
+}
+.cta {
+  background: url('../img/img-1.jpg');
+  background-size: cover;
+  background-color: #333;
+  background-blend-mode: overlay;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+.cta h1 {
+  color: #fff;
+}
+.cta h2 {
+  color: #fff;
+  font-size: 1rem;
+}
+.cta p {
+  color: #fff;
+  margin-top: 1rem;
+  width: 80%;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.cta .btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: transparent;
+  border: #f69314 2px solid;
+  cursor: pointer;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f69314;
+  margin-top: 1rem;
+  list-style-type: none;
+}
+.solutions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.solutions .solution {
+  margin: 2rem 0;
+}
+.solutions .solution h3 {
+  font-size: 0.8rem;
+  padding-top: 2rem;
+}
+.solutions .solution p {
+  margin-top: 0.8rem;
+  line-height: 1.5;
+}
+.solutions .solution .svg {
+  height: 100px;
+  width: 100%;
+  background-size: cover;
+}
+.features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('../img/img-2.jpg');
+  background-size: cover;
+  height: 30rem;
+}
+.features h3 {
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+.features .featureList {
+  margin-top: 2rem;
+}
