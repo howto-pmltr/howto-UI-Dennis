@@ -1,0 +1,21 @@
+footer {
+    background-color: @second-color;
+
+    p {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Oxygen', sans-serif;
+        font-size: @mobile-sm-font;
+        letter-spacing: 2px;
+        padding: 1rem 0;
+        color: white;
+
+        @media @tablet {
+            padding: 1.5rem 0;
+        }
+
+        @media @desktop {
+            padding: 2rem 0;
+        }
+    }
+}

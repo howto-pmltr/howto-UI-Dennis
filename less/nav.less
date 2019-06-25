@@ -1,11 +1,24 @@
 .logo {
-    width: 120px;
-    height: 34px;
+    width: auto;
+    height: 30px;
+
+    @media @desktop {
+        width: auto;
+        height: 60px;
+    }
 }
 
 header {
     background-color: @lighter-text-color;
-    padding: 2rem 0;
+    padding: .5rem 0;
+
+    @media @tablet {
+        padding: 1.2rem 0;
+    }
+
+    @media @desktop {
+        padding: 2rem 0;
+    }
 
     nav {
         display: flex;
@@ -17,15 +30,31 @@ header {
         display: flex;
 
         li {
-            font-size: .5rem;
+            font-size: @mobile-sm-font;
             font-family: 'Oxygen', sans-serif;
             text-transform: uppercase;
             text-decoration: none;
-            margin: 0 1rem;
+            padding: .5rem 1rem;
+
+            @media @tablet {
+                font-size: @tablet-sm-font;
+            }
+
+            @media @desktop {
+                font-size: @desktop-sm-font;
+            }
 
             a {
                 text-decoration: none;
                 color: @dark-text-color;
+
+                @media @tablet {
+                    padding: .75rem 1.25rem;
+                }
+
+                @media @desktop {
+                    padding: 1rem 1.5rem;
+                }
             }
         }
     }
