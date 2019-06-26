@@ -1,0 +1,106 @@
+.tabs {
+    .role {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tab {
+        width: 60%;
+        padding: .5rem 0;
+        margin: .5rem 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Oxygen', sans-serif;
+        font-size: mobile-md-font;
+        border: 2px solid @second-color;
+        color: @second-color;
+        border-radius: 2rem;
+
+
+        @media @tablet {
+            width: 40%;
+            padding: 1.25rem 1rem;
+            margin: 1rem 1rem;
+            font-size: @tablet-md-font;
+        }
+
+        @media @desktop {
+            width: 20%;
+            padding: 1.5rem 1.5rem;
+        }
+
+        &:hover {
+            background-color: lighten(@second-color, 15%);
+            color: @lighter-text-color;
+        }
+    }
+}
+
+.cards {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    @media @tablet {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    
+    .card {
+        background-color: darken(@light-text-color, 5%);
+        border: .2rem solid darken(@light-text-color, 10%);
+        border-radius: 2rem;
+        padding: 2rem 0;
+        margin: 1rem 0;
+        height: 15rem;
+        width: 80%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        @media @tablet {
+            height: 17rem;
+            width: 40%;
+            margin: 1rem;
+        }
+
+        @media @desktop {
+            height: 18rem;
+            width: 20%;
+            margin: 1.5rem;
+        }
+        &-info {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            
+            img {
+                border-radius: 10%;
+                height: 10rem;
+                width: auto;
+            }
+
+            h3 {
+                padding-top: 1rem;
+                font-size: @mobile-lg-font;
+            }
+
+            p {
+                padding-top: .5rem;
+                font-size: @mobile-md-font;
+            }
+
+            .fab {
+                margin-top: .5rem;
+                font-size: 2.5rem;
+            }
+
+        }
+    }
+}

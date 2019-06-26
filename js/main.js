@@ -3,14 +3,6 @@
 const app = [{
     name: 'HowTo',
     tagLine: 'minimal. informative',
-    features: [
-        'Welcoming Interface for new users and registered users)', 
-        'Easy sign-up', 
-        'Easily add a how-to guide',
-        'Write a guide and choose when guide is published, otherwise it stays in draft.',
-        'Tag guides and filter through guides with keywords',
-        'Edit and delete post'],
-    goal: 'By alleviating the pain of lacking knowledge, we will give every individual on the planet the assets to learn how to do anything.',
 }, {
     fontEnd: ['React', 'redux', 'logger', 'thunk', 'material-ui'],
     backEnd: ['Express', 'knex', 'pg', 'jsonwebtoken', 'bcryptjs', 'jest', 'supertest']
@@ -18,51 +10,145 @@ const app = [{
 
 
 const team = [{
-    name: 'Leland Rogers',
+    firstName: 'Leland',
+    lastName: 'Rogers',
+    dataSet: 'teamLeader',
     role: 'Team Leader',
     github: 'https://github.com/ltrii'
 }, 
 {
-    name: 'Isaiah Francois',
+    firstName: 'Isaiah',
+    lastName: 'Francois',
+    dataSet: 'webui',
     role: 'Web UI Developer I',
     github: 'https://github.com/FrancoisCoding'
 },
 {
-    name: 'Levi Thomas',
+    firstName: 'Levi',
+    lastName: 'Thomas',
+    dataSet: 'webui',
     role: 'Web UI Developer II',
     github: 'https://github.com/TheLessonHere'
 },
 {
-    name: 'Dennis Mercado',
+    firstName: 'Dennis',
+    lastName: 'Mercado',
+    dataSet: 'webui',
     role: 'Web UI Developer III',
     github: 'https://github.com/denmercs'
 },
 {
-    name: 'Andy Bettisworth',
+    firstName: 'Andy',
+    lastName: ' Bettisworth',
+    dataSet: 'backEnd',
     role: 'Back End Developer',
     github: 'https://github.com/wurde'
 },
 {
-    name: 'Jarred Stanford',
+    firstName: 'Jarred',
+    lastName: 'Stanford',
+    dataSet: 'frontEnd',
     role: 'Front End Developer',
     github: 'https://github.com/clem9281'
 }]
 
 
+// TEMPLATE
+let cards = document.querySelector('.cards');
+
+for(let i = 0; i < team.length; i++) {
+    let div = document.createElement('div');
+    div.innerHTML = `
+        <div class="card-info">
+            <img src="./img/img-${team[i].firstName}.png" alt="${team[i].firstName} ${team[i].lastName}">
+            <h3>${team[i].firstName} ${team[i].lastName}</h3>
+                <p>${team[i].role}</p>
+                <a href="${team[i].github}"><i class="fab fa-github"></i></a> 
+            </div>            
+        </div>
+        `;
+    div.setAttribute("class", "card");
+    div.setAttribute("data-tab", `${team[i].dataSet}`);
+
+
+    cards.append(div);
+}
+
+// COMPONENTS ~ CAROUSEL
+class Carousel {
+    constructor(carousel) {
+        this.carousel = carousel;
+
+        this.rightBtn = this.carousel.querySelector('.right-button');
+        this.leftBtn = this.carousel.querySelector('.left-button');
+        this.images = this.carousel.querySelectorAll('img');
+        
+        this.index = 0;
+        
+        this.leftBtn.addEventListener('click', () => this.moveLeft());
+        this.rightBtn.addEventListener('click', () => this.moveRight());
+    }
+
+    moveLeft() {
+        this.images.forEach(img => img.classList.remove('img-show'));
+        this.index--;
+        if(this.index < 0) {
+            this.index = this.images.length - 1;
+        }
+        this.images[this.index].classList.add('img-show');
+    }
+
+    moveRight() {
+        this.images.forEach(img => img.classList.remove('img-show'));
+        this.index++;
+        if(this.index > this.images.length - 1) {
+            this.index = 0;
+        }
+        this.images[this.index].classList.add('img-show');
+    }
+}
+
+class TabLink {
+    constructor(tabElement) {
+        this.tabElement = tabElement;
+        this.tabData = this.tabElement.dataset.tab;
+
+        if(this.tabData === "all") {
+            this.cards = document.querySelectorAll('.card');
+        } else {
+            this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
+        }
+
+        this.cards = Array.from(this.cards).map(card => new TabCard(card));
+        this.tabElement.addEventListener('click', () => this.selectTab());
+    }
+    
+    selectTab() {
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(card => card.classList.remove('.active-tab'));
+
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => card.style.display = "none");
+        this.tabElement.classList.add('active-tab');
+        this.cards.forEach(card => card.selectCard());
+    }
+}
+
+class TabCard {
+    constructor(cardElement) {
+        this.cardElement = cardElement;
+    }
+
+    selectCard() {
+        this.cardElement.style.display = "flex";
+    }
+}
 
 
 
-// COMPONENTS
+let carousel = document.querySelector('.carousel');
+carousel = new Carousel(carousel);
 
-
-
-
-
-
-
-
-
-
-
-
-// ANIMATIONS
+let tabs = document.querySelectorAll('.tab');
+tabs.forEach(tab => new TabLink(tab));
