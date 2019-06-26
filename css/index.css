@@ -664,7 +664,7 @@ header ul li a {
 @media (min-width: 991px) {
   .about h3 {
     font-size: 2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 }
 .about p {
@@ -698,12 +698,12 @@ header ul li a {
 }
 @media (min-width: 767px) {
   .carousel {
-    height: 20rem;
+    height: 17rem;
   }
 }
 @media (min-width: 991px) {
   .carousel {
-    height: 30rem;
+    height: 25rem;
   }
 }
 .carousel .left-button,
@@ -720,6 +720,7 @@ header ul li a {
   width: 2.3rem;
   height: 2.3rem;
   cursor: pointer;
+  opacity: 0.25;
 }
 @media (min-width: 767px) {
   .carousel .left-button,
