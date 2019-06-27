@@ -190,6 +190,7 @@ p {
 .tabs .tab:hover {
   background-color: #8f1ad9;
   color: #EBEBEB;
+  cursor: pointer;
 }
 .cards {
   margin: 2rem 0;
