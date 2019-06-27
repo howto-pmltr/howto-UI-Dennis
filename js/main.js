@@ -86,6 +86,7 @@ class Carousel {
         if(this.index < 0) {
             this.index = this.images.length - 1;
         }
+        this.images[this.index].classList.add('fadeInLeft');
         this.images[this.index].classList.add('img-show');
     }
 
@@ -95,10 +96,12 @@ class Carousel {
         if(this.index > this.images.length - 1) {
             this.index = 0;
         }
+        this.images[this.index].classList.add('fadeInRight');
         this.images[this.index].classList.add('img-show');
     }
 }
 
+// COMPONENTS ~ TABS
 class TabLink {
     constructor(tabElement) {
         this.tabElement = tabElement;
