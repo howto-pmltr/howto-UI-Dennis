@@ -1,0 +1,27 @@
+.btn() {
+    border:none;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    background-color: transparent;
+    border: @third-color 2px solid;
+    cursor: pointer;
+    font-family: 'Oxygen', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .15rem;
+    color: @third-color;
+
+    &:hover {
+        background-color: darken(@third-color, 8%);
+        color: @light-text-color;
+    }
+}
+
+.navItem {
+    font-weight: bold;
+
+    &:hover {
+        color: white;
+        background-color: darken(@third-color, 5%);
+    }
+}
